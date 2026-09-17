@@ -1,0 +1,87 @@
+name: README Deploy Snapshot
+run-name: README Deploy Snapshot · PR #${{ github.event.pull_request.number }}
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: readme-entrega-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  verificar:
+    name: verificar
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: El README coincide exactamente con esta entrega
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          base = os.environ['BASE_SHA']
+          head = os.environ['HEAD_SHA']
+          cambiados = sorted(
+              linea.strip()
+              for linea in subprocess.check_output(
+                  ['git', 'diff', '--name-only', base, head], text=True
+              ).splitlines()
+              if linea.strip()
+          )
+
+          readme = Path('README.md').read_text(encoding='utf-8')
+          requeridas = [
+              '# POSTULA — Última entrega',
+              '## Qué se hizo',
+              '## Archivos modificados en esta entrega',
+              '## Validación',
+              '## Qué sigue',
+          ]
+          faltantes = [t for t in requeridas if t not in readme]
+          if faltantes:
+              print('Al README le faltan secciones obligatorias:', file=sys.stderr)
+              for t in faltantes:
+                  print(f'  - {t}', file=sys.stderr)
+              sys.exit(1)
+
+          seccion = re.search(
+              r'## Archivos modificados en esta entrega\s*\n(.*?)(?=\n## |\Z)',
+              readme, flags=re.S,
+          )
+          if not seccion:
+              print('No se pudo leer la lista de archivos del README.', file=sys.stderr)
+              sys.exit(1)
+
+          listados = sorted(re.findall(r'^- `([^`]+)`(?:\s+—.*)?$', seccion.group(1), flags=re.M))
+          if cambiados != listados:
+              print('La lista de archivos del README no coincide con el diff del PR.', file=sys.stderr)
+              print('\nCambiados en el PR:', file=sys.stderr)
+              for r in cambiados:
+                  print(f'  {r}', file=sys.stderr)
+              print('\nListados en el README:', file=sys.stderr)
+              for r in listados:
+                  print(f'  {r}', file=sys.stderr)
+              print('\nRefresca README.md antes del merge.', file=sys.stderr)
+              sys.exit(1)
+
+          if len(readme.encode('utf-8')) >= 8000:
+              print('El README creció más de 8 KB: es una foto de la entrega, no un manual.', file=sys.stderr)
+              sys.exit(1)
+
+          print(f'El README coincide con los {len(cambiados)} archivos de la entrega.')
+          PY

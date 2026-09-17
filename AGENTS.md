@@ -40,7 +40,7 @@ POSTULA elimina el trabajo repetitivo de postularse a empleos: rellenar los mism
 | Producto | **POSTULA** |
 | Forma | Extensión de navegador (Chrome Manifest V3) |
 | Navegadores | Chrome, Edge, Brave, Opera (mismo paquete) |
-| Repositorio | `drpipe1098-commits/Dr-Pipe-Grind` |
+| Repositorio | `drpipe1098-commits/postula` (antes vivía en `Dr-Pipe-Grind`, que queda como archivo histórico) |
 | Rama canónica | `main` |
 | Lenguaje del código | JavaScript sin dependencias, sin paso de compilación |
 | Idioma del producto | Español (Colombia) |
