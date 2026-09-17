@@ -1,0 +1,12 @@
+{
+  "name": "postula",
+  "version": "0.1.0",
+  "description": "Llena tus datos una sola vez y rellena el formulario de cualquier portal de empleo con un clic.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node tests/run.mjs",
+    "iconos": "python3 scripts/generar-iconos.py"
+  }
+}

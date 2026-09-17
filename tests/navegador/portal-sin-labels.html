@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Portal sin etiquetas — formulario de postulación</title></head>
+<body>
+<!--
+  Reproduce los portales que NO usan <label for>: el rótulo vive en un div
+  hermano dentro del mismo contenedor, o solo existe el placeholder.
+  Aquí es donde falla la mayoría de los autocompletadores.
+-->
+
+<div class="campo">
+  <div class="rotulo">Nombre completo</div>
+  <input type="text" name="fullName">
+</div>
+
+<div class="campo">
+  <div class="rotulo">Correo electrónico</div>
+  <input type="text" name="mail01">
+</div>
+
+<div class="campo">
+  <div class="rotulo">Celular</div>
+  <input type="text" name="mobile01">
+</div>
+
+<div class="campo">
+  <input type="text" placeholder="Ciudad donde resides" name="loc01">
+</div>
+
+<div class="campo">
+  <input type="text" aria-label="Perfil de LinkedIn" name="social01">
+</div>
+
+<div class="campo">
+  <div class="rotulo">Años de experiencia</div>
+  <input type="number" name="exp01">
+</div>
+
+<div class="campo">
+  <div class="rotulo">Disponibilidad para iniciar</div>
+  <input type="text" name="avail01">
+</div>
+
+<div class="campo">
+  <div class="rotulo">Modalidad de trabajo</div>
+  <select name="mod01">
+    <option value="">Elige una opción</option>
+    <option>Presencial</option>
+    <option>Híbrido</option>
+    <option>Remoto</option>
+  </select>
+</div>
+
+<div class="campo">
+  <div class="rotulo">Carta de presentación</div>
+  <textarea name="cover01"></textarea>
+</div>
+
+<!-- Trampas: datos que NO son del candidato. -->
+<div class="campo">
+  <div class="rotulo">Nombre de la empresa donde trabajas actualmente</div>
+  <input type="text" name="currentCompany">
+</div>
+
+<div class="campo">
+  <div class="rotulo">Nombre del contacto de emergencia</div>
+  <input type="text" name="emergencyName">
+</div>
+
+<div class="campo">
+  <div class="rotulo">Teléfono del contacto de emergencia</div>
+  <input type="tel" name="emergencyPhone">
+</div>
+
+<div class="campo">
+  <div class="rotulo">Salario ofrecido para esta vacante</div>
+  <input type="text" name="offeredSalary">
+</div>
+</body>
+</html>

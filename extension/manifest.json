@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "POSTULA — Autorrelleno de hojas de vida",
+  "short_name": "POSTULA",
+  "version": "0.1.0",
+  "default_locale": "es",
+  "description": "Llena tus datos una sola vez y rellena el formulario de cualquier portal de empleo con un clic. Tus datos nunca salen de tu computador.",
+  "icons": {
+    "16": "iconos/icono-16.png",
+    "32": "iconos/icono-32.png",
+    "48": "iconos/icono-48.png",
+    "128": "iconos/icono-128.png"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_title": "POSTULA — rellenar este formulario",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "iconos/icono-16.png",
+      "32": "iconos/icono-32.png",
+      "48": "iconos/icono-48.png",
+      "128": "iconos/icono-128.png"
+    }
+  },
+  "options_ui": {
+    "page": "opciones.html",
+    "open_in_tab": true
+  }
+}

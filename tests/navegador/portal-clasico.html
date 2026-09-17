@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Portal clásico — formulario de postulación</title></head>
+<body>
+<!--
+  Reproduce la forma más común en portales de empleo colombianos:
+  <label for> explícito, name en español, asterisco de obligatorio y selects.
+  Incluye trampas que POSTULA nunca debe tocar.
+-->
+
+<form id="buscador">
+  <label for="q">Buscar empleo</label>
+  <input type="text" id="q" name="palabraClave" placeholder="¿Qué empleo buscas?">
+</form>
+
+<form id="acceso">
+  <label for="usr">Usuario</label>
+  <input type="text" id="usr" name="usuario">
+  <label for="pwd">Contraseña</label>
+  <input type="password" id="pwd" name="clave">
+</form>
+
+<form id="postulacion">
+  <label for="c_nombres">Nombres *</label>
+  <input type="text" id="c_nombres" name="nombres">
+
+  <label for="c_apellidos">Apellidos *</label>
+  <input type="text" id="c_apellidos" name="apellidos">
+
+  <label for="c_tipodoc">Tipo de documento</label>
+  <select id="c_tipodoc" name="tipoDocumento">
+    <option value="">Seleccione</option>
+    <option value="CC">Cédula de ciudadanía</option>
+    <option value="CE">Cédula de extranjería</option>
+    <option value="PA">Pasaporte</option>
+  </select>
+
+  <label for="c_doc">Número de documento *</label>
+  <input type="text" id="c_doc" name="numeroDocumento">
+
+  <label for="c_email">Correo electrónico *</label>
+  <input type="email" id="c_email" name="email">
+
+  <label for="c_cel">Teléfono celular *</label>
+  <input type="tel" id="c_cel" name="celular">
+
+  <label for="c_dir">Dirección de residencia</label>
+  <input type="text" id="c_dir" name="direccion">
+
+  <label for="c_ciudad">Ciudad de residencia</label>
+  <input type="text" id="c_ciudad" name="ciudad">
+
+  <label for="c_depto">Departamento</label>
+  <input type="text" id="c_depto" name="departamento">
+
+  <label for="c_nivel">Nivel educativo</label>
+  <select id="c_nivel" name="nivelEducativo">
+    <option value="">Seleccione</option>
+    <option>Bachillerato</option>
+    <option>Técnico</option>
+    <option>Tecnólogo</option>
+    <option>Profesional</option>
+  </select>
+
+  <label for="c_aspira">Aspiración salarial</label>
+  <input type="text" id="c_aspira" name="aspiracionSalarial">
+
+  <label for="c_resumen">Cuéntanos sobre ti</label>
+  <textarea id="c_resumen" name="presentacion"></textarea>
+
+  <label for="c_hv">Adjuntar hoja de vida</label>
+  <input type="file" id="c_hv" name="archivoHv">
+
+  <button type="submit">Postularme</button>
+</form>
+</body>
+</html>

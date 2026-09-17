@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>POSTULA</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    body { width: 330px; padding: 16px; }
+    .cabecera { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .cabecera img { width: 32px; height: 32px; border-radius: 7px; }
+    .acciones { display: grid; gap: 8px; }
+    .informe { margin-top: 14px; font-size: 13px; }
+    .informe ul { margin: 6px 0 0; padding-left: 18px; }
+    .informe li { margin-bottom: 2px; }
+    .pie { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--borde); }
+    .opcion { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--suave); }
+    .opcion input { width: auto; }
+  </style>
+</head>
+<body>
+  <div class="cabecera">
+    <img src="iconos/icono-48.png" alt="">
+    <div>
+      <h1>POSTULA</h1>
+      <div class="sutil">Tus datos, en un clic.</div>
+    </div>
+  </div>
+
+  <div id="estado"></div>
+
+  <div class="acciones">
+    <button id="rellenar" class="principal">Rellenar este formulario</button>
+    <label class="opcion">
+      <input type="checkbox" id="sobrescribir">
+      Reemplazar lo que ya esté escrito
+    </label>
+  </div>
+
+  <div id="informe" class="informe"></div>
+
+  <div class="pie">
+    <button id="perfil">Editar mi perfil</button>
+    <p class="sutil" style="margin-top:10px">
+      POSTULA nunca envía el formulario. Revisa y envía tú.
+    </p>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

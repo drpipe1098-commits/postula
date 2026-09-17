@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Portal moderno — formulario corporativo</title></head>
+<body>
+<!--
+  Reproduce un formulario corporativo moderno:
+  - atributos autocomplete estándar,
+  - campos ocultos, deshabilitados y de solo lectura,
+  - el formulario real dentro de un iframe,
+  - registro de eventos para comprobar que React/Vue/Angular se enterarían.
+-->
+<script>
+  window.__eventos = [];
+  document.addEventListener('input',  (e) => window.__eventos.push(['input',  e.target.name, e.target.value]), true);
+  document.addEventListener('change', (e) => window.__eventos.push(['change', e.target.name, e.target.value]), true);
+</script>
+
+<form id="aplicacion">
+  <input type="text"  name="givenName"  autocomplete="given-name"  aria-label="First name">
+  <input type="text"  name="familyName" autocomplete="family-name" aria-label="Last name">
+  <input type="email" name="mail"       autocomplete="email"       aria-label="Email address">
+  <input type="tel"   name="phone"      autocomplete="tel"         aria-label="Phone">
+  <input type="text"  name="city"       autocomplete="address-level2" aria-label="City">
+  <input type="text"  name="country"    autocomplete="country-name"   aria-label="Country">
+
+  <!-- Nunca se deben tocar -->
+  <input type="hidden"   name="csrfToken" value="abc123">
+  <input type="text"     name="ciudadBloqueada" aria-label="Ciudad" disabled>
+  <input type="text"     name="correoBloqueado" aria-label="Correo electrónico" readonly value="no-tocar@ejemplo.com">
+  <input type="text"     name="tarjeta" aria-label="Número de tarjeta de crédito">
+  <input type="text"     name="cvv" aria-label="CVV">
+  <input type="text"     name="invisible" aria-label="Celular" style="display:none">
+
+  <label for="pais2">País</label>
+  <select id="pais2" name="paisLista">
+    <option value="">--</option>
+    <option value="AR">Argentina</option>
+    <option value="CO">Colombia</option>
+    <option value="MX">México</option>
+  </select>
+
+  <iframe src="portal-marco.html" title="Formulario" width="400" height="300"></iframe>
+</form>
+</body>
+</html>

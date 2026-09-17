@@ -1,0 +1,27 @@
+# Nunca subir datos personales de nadie.
+*.pdf
+*.docx
+perfil*.json
+mi-perfil-postula.json
+
+# La hoja de vida se deja en la raíz, que es desde donde se corren las
+# herramientas. Estos patrones van anclados con «/» a propósito: sin anclar
+# también tapaban el código fuente —herramientas/hv-a-perfil.mjs y
+# herramientas/lib/hoja-de-vida.mjs— y lo dejaban fuera del repositorio.
+/hoja-de-vida*
+/hv-*
+
+# Las vacantes que recoge la persona: llevan enlaces y notas suyas.
+# El ejemplo ficticio de herramientas/ sí se versiona.
+mis-vacantes*
+vacantes.txt
+vacantes.json
+
+# El tablero dice a qué empleos se postuló alguien y en qué va cada proceso.
+# Es de lo más sensible que produce este proyecto.
+mis-postulaciones*
+postulaciones*.json
+
+node_modules/
+.DS_Store
+*.zip

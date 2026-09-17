@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mi perfil — POSTULA</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    body { background: var(--fondo); }
+    .hoja { max-width: 820px; margin: 0 auto; padding: 28px 16px 120px; }
+    .cabecera { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .cabecera img { width: 40px; height: 40px; border-radius: 9px; }
+    .grupo {
+      background: #fff; border: 1px solid var(--borde); border-radius: 12px;
+      padding: 18px; margin-bottom: 16px;
+    }
+    .rejilla { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+    .rejilla .ancho { grid-column: 1 / -1; }
+    .fila-lista { border: 1px solid var(--borde); border-radius: 10px; padding: 14px; margin-top: 12px; background: var(--fondo); }
+    .fila-lista .rejilla { margin-top: 0; }
+    .quitar { margin-top: 12px; color: var(--mal); border-color: #fecaca; }
+    .barra {
+      position: fixed; left: 0; right: 0; bottom: 0; background: #fff;
+      border-top: 1px solid var(--borde); padding: 12px 16px;
+      padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+      display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+    }
+    .barra .crece { flex: 1; min-width: 120px; }
+    @media (max-width: 620px) { .rejilla { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="hoja">
+    <div class="cabecera">
+      <img src="iconos/icono-48.png" alt="">
+      <div>
+        <h1>Mi perfil</h1>
+        <div class="sutil">Llénalo una sola vez. Se guarda en este computador y no sale de aquí.</div>
+      </div>
+    </div>
+
+    <div id="estado"></div>
+    <form id="formulario"></form>
+  </div>
+
+  <div class="barra">
+    <button id="guardar" class="principal">Guardar</button>
+    <button id="exportar">Descargar copia</button>
+    <button id="importar">Cargar copia</button>
+    <input type="file" id="archivo" accept="application/json" hidden>
+    <span class="crece sutil" id="mensaje"></span>
+  </div>
+
+  <script src="lib/normalizar.js"></script>
+  <script src="lib/perfil.js"></script>
+  <script src="opciones.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+# POSTULA — ejemplo del formato de vacantes.
+#
+# Arma tu propio archivo con lo que te llega de las alertas de empleo.
+# Cada aviso va separado por una línea de tres guiones. Las etiquetas que
+# entiende: Cargo, Empresa, Salario, Modalidad, Ubicación, Enlace, Descripción.
+# Todos los datos de este archivo son ficticios.
+
+Cargo: Analista de Mesa de Ayuda Nivel 2
+Empresa: Soluciones Andinas SAS
+Salario: $3.200.000
+Modalidad: Remoto
+Ubicación: Bogotá (teletrabajo)
+Enlace: https://ejemplo.com/vacante/1
+Descripción: Atención y escalamiento de incidentes de soporte técnico en primer
+  y segundo nivel. Documentación en sistema de tickets, control de SLAs,
+  soporte a usuarios de Microsoft 365 y herramientas de escritorio remoto
+  como AnyDesk y TeamViewer. Inglés técnico de lectura deseable.
+---
+Cargo: Asistente Virtual de Automatización
+Empresa: Data Pereira Ltda
+Salario: 2.800.000 a 3.400.000
+Modalidad: Híbrido
+Ubicación: Pereira, Risaralda
+Enlace: https://ejemplo.com/vacante/2
+Descripción: Apoyo en la automatización de procesos internos con Python y n8n,
+  organización de inventarios digitales y generación de reportes. Deseable
+  experiencia en documentación técnica y manejo de Google Workspace.
+---
+Cargo: Technical Support Specialist
+Empresa: Global Helpdesk Corp
+Salario: $4.500.000
+Modalidad: Remoto
+Ubicación: Medellín
+Enlace: https://ejemplo.com/vacante/3
+Descripción: Soporte a clientes internacionales. Se requiere inglés B2
+  conversacional comprobable para atención de llamadas en inglés.
+---
+Cargo: Técnico de Soporte en Sitio
+Empresa: Redes del Eje SAS
+Salario: $1.900.000
+Modalidad: Presencial
+Ubicación: Manizales
+Enlace: https://ejemplo.com/vacante/4
+Descripción: Mantenimiento físico de equipos, cableado estructurado y visitas
+  a clientes en la ciudad. Requiere licencia de conducción vigente.
+---
+Cargo: Moderador de Contenido Digital
+Empresa: Plataforma Contenidos SAS
+Salario: A convenir
+Modalidad: Remoto
+Ubicación: Colombia
+Enlace: https://ejemplo.com/vacante/5
+Descripción: Revisión y clasificación de contenido multimedia según políticas
+  de la plataforma. Manejo de herramientas de edición y reportes. Turnos
+  rotativos, trabajo desde casa.

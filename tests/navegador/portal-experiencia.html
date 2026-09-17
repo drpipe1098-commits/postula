@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Portal — experiencia laboral</title>
+</head>
+<body>
+  <!--
+    Reproduce la sección de experiencia laboral de elempleo.com, que es donde
+    POSTULA metió el titular profesional dentro de la fila de un empleo
+    pasado. Cada bloque es un empleo; el rótulo «Nombre del cargo» se repite
+    una vez por bloque, y por eso el motor no puede decidirlo campo por campo.
+
+    Todos los datos son ficticios.
+  -->
+
+  <h1>Mi hoja de vida</h1>
+
+  <!-- FUERA de todo bloque: este cargo SÍ es el titular de la persona. -->
+  <section>
+    <label for="aspira">Cargo al que aspiras</label>
+    <input type="text" id="aspira" name="cargoAspira">
+
+    <label for="correo">Correo electrónico</label>
+    <input type="email" id="correo" name="email">
+  </section>
+
+  <h2>Experiencia laboral</h2>
+
+  <!-- Bloque 1 — la empresa y las fechas YA están escritas por la persona.
+       Es el caso exacto del fallo reportado. -->
+  <div class="bloque">
+    <label for="c1">Nombre del cargo</label>
+    <input type="text" id="c1" name="cargo1">
+
+    <label for="ce1">Cargo equivalente</label>
+    <input type="text" id="ce1" name="cargoEquivalente1">
+
+    <label for="e1">Empresa</label>
+    <input type="text" id="e1" name="empresa1" value="Agencia Ejemplo Uno SAS">
+
+    <label for="s1">Sector de la empresa:</label>
+    <input type="text" id="s1" name="sector1">
+
+    <label for="u1">Ubicación</label>
+    <input type="text" id="u1" name="ubicacionEmpresa1">
+
+    <label for="mi1">Fecha de inicio</label>
+    <select id="mi1" name="mesInicio1">
+      <option value=""></option>
+      <option>Ene</option><option>Feb</option><option>Mar</option><option>Abr</option>
+      <option>May</option><option>Jun</option><option>Jul</option><option>Ago</option>
+      <option>Sep</option><option>Oct</option><option>Nov</option><option>Dic</option>
+    </select>
+    <input type="text" id="ai1" name="anoInicio1" value="2020">
+
+    <label for="mf1">Fecha de finalización</label>
+    <select id="mf1" name="mesFin1">
+      <option value=""></option>
+      <option>Ene</option><option>Feb</option><option>Mar</option><option>Abr</option>
+      <option>May</option><option>Jun</option><option>Jul</option><option>Ago</option>
+      <option>Sep</option><option>Oct</option><option>Nov</option><option>Dic</option>
+    </select>
+    <input type="text" id="af1" name="anoFin1" value="2021">
+
+    <label for="l1">Tus logros y responsabilidades</label>
+    <textarea id="l1" name="logros1"></textarea>
+  </div>
+
+  <!-- Bloque 2 — completamente vacío: se resuelve por orden. -->
+  <div class="bloque">
+    <label for="c2">Nombre del cargo</label>
+    <input type="text" id="c2" name="cargo2">
+
+    <label for="e2">Empresa</label>
+    <input type="text" id="e2" name="empresa2">
+
+    <label for="mi2">Mes de inicio</label>
+    <input type="text" id="mi2" name="mesInicio2">
+
+    <label for="ai2">Año de inicio</label>
+    <input type="text" id="ai2" name="anoInicio2">
+
+    <label for="l2">Tus logros y responsabilidades</label>
+    <textarea id="l2" name="logros2"></textarea>
+  </div>
+
+  <!-- Trampas sueltas, fuera de cualquier bloque de experiencia. -->
+  <section>
+    <label for="busca">¿Qué empleo buscas?</label>
+    <input type="text" id="busca" name="palabraClave">
+
+    <label for="clave">Contraseña</label>
+    <input type="password" id="clave" name="clave">
+
+    <label for="reqcargo">Habilidades requeridas para el cargo</label>
+    <input type="text" id="reqcargo" name="requisitosCargo">
+  </section>
+</body>
+</html>
